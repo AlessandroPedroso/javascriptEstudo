@@ -54,3 +54,26 @@ function smallerAndBiggerValue(array){
 }
 
 smallerAndBiggerValue(arrayNumber)
+
+// 5.Crie um programa que utilize um laço for para percorrer uma array const numeros = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14] e exibir no console apenas os números pares contidos nesse array
+
+const numeros = [3, 8, 12, 5, 6, 10, 7, 2, 9, 14]
+
+for (let index = 0; index < numeros.length; index++) {
+    if(numeros[index] % 2 ===0){
+        console.log(numeros[index])
+    }
+}
+
+// 6.Crie um programa que calcule a média dos números presentes em um array utilizando um loop for
+
+const numberMedias = [2,4,5,6,2,7]
+    let sum =0
+for (let index = 0; index < numberMedias.length; index++) {
+     sum += numberMedias[index];
+}
+
+const media = sum/numberMedias.length
+
+console.log("Resultado da media: ",media)
+
