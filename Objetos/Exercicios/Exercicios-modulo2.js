@@ -28,3 +28,115 @@ function mostrarInfoPessoa(pessoa) {
 }
 // Chamada da função mostrarInfoPessoa
 mostrarInfoPessoa(pessoa)
+
+//2 - Adicione ao objeto pessoa uma nova propriedade chamada endereco. Esta propriedade deve ser um objeto representando o endereço da pessoa, com as seguintes subpropriedades:
+//rua (string): nome da rua.
+// cidade (string): nome da cidade.
+// estado (string): nome do estado.
+//Preencha as subpropriedades do objeto endereco com valores fictícios.
+//Modifique a função mostrarInfoPessoa para incluir as informações do endereço da pessoa ao ser chamada.
+//No final do arquivo infoPessoa.js, chame a função mostrarInfoPessoa para verificar se as informações atualizadas, incluindo o endereço, são exibidas corretamente no console.
+const pessoa2 = {
+    nome: "Ana",
+    idade: 25,
+    solteiro: true,
+    hobbies: ["Leitura", "Caminhada", "Fotografia"],
+    endereco: {
+        rua: "Rua Principal",
+        cidade: "Cidade Feliz",
+        estado: "Estado Alegre"
+    }
+}
+
+function mostrarInfoPessoa2(pessoa) {
+    console.log("Informações da Pessoa:");
+    console.log(`Nome: ${pessoa.nome} (Tipo: ${typeof pessoa.nome})`);
+    console.log(`Idade: ${pessoa.idade} anos (Tipo: ${typeof pessoa.idade})`);
+    console.log(`Solteiro: ${pessoa.solteiro} (Tipo: ${typeof pessoa.solteiro})`);
+    console.log(`Hobbies: ${pessoa.hobbies.join(", ")} (Tipo: ${typeof pessoa.hobbies})`);
+    console.log("Endereço:");
+    console.log(`Rua: ${pessoa.endereco.rua}`);
+    console.log(`Cidade: ${pessoa.endereco.cidade}`);
+    console.log(`Estado: ${pessoa.endereco.estado}`);
+}
+
+// Chamada da função mostrarInfoPessoa
+mostrarInfoPessoa2(pessoa2);
+
+//3 -
+
+const listaPessoas = [
+
+    {nome:"João", idade:30, cidade:"São Paulo"},
+    {nome: "Maria", idade: 25, cidade: "Rio de Janeiro" },
+    {nome:"Carlos", idade:35, cidade:"Belo Horizonte"},
+]
+
+function mostrarInfoPessoa3(pessoas) {
+    console.log("Lista de Pessoas:");
+    pessoas.forEach(pessoa => {
+        console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Cidade: ${pessoa.cidade}`)
+    });
+}
+
+function filtrarPorCidade(pessoas, cidade) {
+
+    return pessoas.filter(pessoa=> pessoa.cidade === cidade)
+}
+
+// Chamada da função mostrarListaPessoas
+mostrarInfoPessoa3(listaPessoas)
+
+// Adição de uma nova pessoa à lista
+listaPessoas.push({ nome: "Ana", idade: 28, cidade: "Salvador" })
+
+// Chamada da função mostrarListaPessoas após a adição
+mostrarInfoPessoa3(listaPessoas)
+
+// Chamada da função filtrarPorCidade
+const pessoasSalvador = filtrarPorCidade(listaPessoas, 'Salvador')
+console.log("Pessoas em Salvador:")
+console.log(pessoasSalvador)
+
+//4 -
+
+const calculadora = {
+
+    soma: function (a, b) {
+        return a + b
+    },
+
+    subtracao: function (a, b) {
+        return a - b
+    },
+
+    multiplicacao: function (a, b) {
+        return a * b
+    },
+
+    divisao: function (a, b) {
+        if (b !== 0) {
+          return a/b
+        } else {
+            return "Divisão por zero não é permitida"
+      }
+    },
+
+    calculadoraMedia: function (numeros) {
+        const soma = numeros.reduce((total, numero) => total + numero, 0)
+        return soma / numeros.length
+    }
+
+}
+
+// chamadas das funções
+console.log("Soma: " + calculadora.soma(5, 3))
+console.log("Subtração: " + calculadora.subtracao(8, 4))
+console.log("Multiplicação: " + calculadora.multiplicacao(6, 2))
+console.log("Divisão: " + calculadora.divisao(10, 2))
+console.log("Divisão por zero: " + calculadora.divisao(8, 0))
+
+const numerosParaMedia = [10, 8, 6, 9, 7]
+
+console.log("Média: " + calculadora.calculadoraMedia(numerosParaMedia))
+
