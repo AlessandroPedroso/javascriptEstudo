@@ -161,6 +161,7 @@ const contaBancaria = {
     depositar: function (valor) {
         this.saldo += valor;
     },
+    
     sacar: function (valor) {
         if (valor <= this.saldo) {
             this.saldo -=valor
